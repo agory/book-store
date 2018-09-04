@@ -5,7 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 http://www.liquibase.org/xml/ns/dbchangelog
-http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+        logicalFilePath="db.changelog-master.xml">
 
     <include file="create-table-book.xml" relativeToChangelogFile="true"/>
 

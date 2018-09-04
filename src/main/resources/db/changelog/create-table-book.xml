@@ -2,7 +2,8 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"
+        logicalFilePath="create-table-book.xml">
 
     <changeSet author="agory" id="createTable-Book">
         <createTable remarks="Creation of book Table"

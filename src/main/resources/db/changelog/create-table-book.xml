@@ -6,13 +6,13 @@
 
     <changeSet author="agory" id="createTable-Book">
         <createTable remarks="Creation of book Table"
-                     schemaName="public"
                      tableName="Book">
             <column name="isbn" type="varchar(255)"/>
             <column name="title" type="varchar(255)"/>
             <column name="authors" type="varchar(255)"/>
             <column name="publisher" type="varchar(255)"/>
             <column name="image" type="varchar(255)"/>
+            <column name="description" type="text"/>
         </createTable>
     </changeSet>
 

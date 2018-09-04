@@ -7,7 +7,7 @@
 
     <changeSet author="agory" id="createTable-Book">
         <createTable remarks="Creation of book Table"
-                     tableName="Book">
+                     tableName="book">
             <column name="isbn" type="varchar(255)"/>
             <column name="title" type="varchar(255)"/>
             <column name="authors" type="varchar(255)"/>

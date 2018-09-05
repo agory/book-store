@@ -23,6 +23,14 @@ public class Book {
 
     private String description;
 
+    public Book(String isbn, String title, String authors, String publisher, String image, String description) {
+        this.isbn = isbn;
+        this.title = title;
+        this.authors = authors;
+        this.publisher = publisher;
+        this.image = image;
+        this.description = description;
+    }
 
     public String getIsbn() {
         return isbn;

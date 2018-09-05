@@ -9,5 +9,7 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
         logicalFilePath="db.changelog-master.xml">
 
     <include file="create-table-book.xml" relativeToChangelogFile="true"/>
+    <include file="insert-book.xml" relativeToChangelogFile="true"/>
+    <include file="add-book-constraints.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

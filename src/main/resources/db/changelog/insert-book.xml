@@ -1,0 +1,152 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"
+        logicalFilePath="insert-book.xml">
+
+    <changeSet author="liquibase-docs" id="insert-example">
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9780244909130"/>
+            <column name="title" type="varchar(255)" value="Pratique de magie litanique"/>
+            <column name="authors" type="varchar(255)" value="Romarret HALABAQ"/>
+            <column name="publisher" type="varchar(255)" value="Lulu.com"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=-dAtDwAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text" value="No description provided"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782844859129"/>
+            <column name="title" type="varchar(255)" value="De la magie"/>
+            <column name="authors" type="varchar(255)" value="Giordano BRUNO"/>
+            <column name="publisher" type="varchar(255)" value="Editions Allia"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=yWSCBAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text" value="Philosophe majeur de la …les autorités usurpées."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782858166480"/>
+            <column name="title" type="varchar(255)" value="La fantaisie post-romantique"/>
+            <column name="authors" type="varchar(255)" value="Jean-Louis Cabanès,Jean-Pierre Saïdah"/>
+            <column name="publisher" type="varchar(255)" value="Presses Univ. du Mirail"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=9xoQCQ021X8C&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Des écrivains aussi divers que Hugo, Nerval, Gautier, Champfleury ou les frères Goncourt se sont réclamés de la fantaisie, dessinant en cela un paysage littéraire allant du pittoresque blagueur au merveilleux, du fantasque au fantastique, du grotesque à l'arabesque, de la vraisemblance contestée à la satire, la caricature, la parodie ou la pantomime. La fantaisie, c'est aussi l'excentricité sous toutes ses formes : excentricité narrative, personnages d'excentriques chers à Champfleury, excentricité sociale des bohèmes et des dandys. C'est bien la muse de 'la génération poétique de 1860'. Mais si cette fantaisie prétend être l'expression de l'imagination créatrice, il arrive aussi qu'elle rencontre les codes journalistiques : elle s'incarne alors dans la prose blagueuse d'Aurélien Scholl ou de Charles Monselet. Les contributions de ce volume adoptent d'abord une perspective sociocritique ou historienne qui, sans négliger les minores, explore une période relativement peu connue de l'histoire littéraire (1845-1860), au carrefour du réalisme et du renouveau des formes poétiques. Une approche poéticienne analyse en outre la fantaisie, dans sa rhétorique et ses modalités, comme catégorie esthétique. On voit en quoi cette réflexion peut enrichir notre compréhension des modernités littéraires."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9781463400866"/>
+            <column name="title" type="varchar(255)" value="Fantaisie de Ma Jeunesse"/>
+            <column name="authors" type="varchar(255)" value="Joel Hilaire M D"/>
+            <column name="publisher" type="varchar(255)" value="AuthorHouse"/>
+            <column name="image" type="varchar(255)"
+                    value="http://books.google.com/books/content?id=o89y95dVuBYC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Fantaisie de ma Jeunesse repr sente l'histoire d'une vie simplement v cue, un r ve modeste et innocent. Elle traduit la qu te de l'auteur vers l'Absolu et la Spiritualit , le d sir d'aimer et d' tre aim , sa confiance dans l'Amiti et sa compassion face la souffrance des uns et des autres.Fantaisie de ma Jeunesse, mon histoire, votre r ve...Fantasia of my Youth represents the story of a life simply lived, a modest and an innocent dream. It translates the quest of the author toward the Absolute and Spirituality, the desire to love and to be loved, his confidence toward Friendship and his compassion before the sufferings of others.Fantasia of my Youth, my story, your dream..."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782600012560"/>
+            <column name="title" type="varchar(255)" value="De la fantaisie chez Ronsard"/>
+            <column name="authors" type="varchar(255)" value="Christine Pigné"/>
+            <column name="publisher" type="varchar(255)" value="Librairie Droz"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=pBMIRqGzN-IC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Ronsard découvre, à l'articulation de l'âme et du corps, les richesses de l'imagination, de la fantaisie humaine. L'âme incarnée vit constamment entourée d'images, qu'elles proviennent des organes des sens, du sang, du Spiritus fantasticus, de la mémoire, de la fantaisie libérée de tout contrôle rationnel dans le temps du songe, des démons... L'étude conjointe du sommeil et de la fantaisie nous permet d'appréhender les oeuvres du Vendômois de façon chronologique. Dans la première décennie de sa création poétique, Ronsard se nourrit dans ses oeuvres de multiples images fantastiques: les visions prophétiques, les images mortes de la sorcière, les secrets du puissant Dionysos, la mélancolie amoureuse, les songes... Au début des années 1560, le poète subit une double crise, interne et externe, qui le conduit à définir une 'bonne santé' de l'imagination. Attentif à ne plus accueillir dans son esprit toutes les créatures fantastiques, le poète se montre de plus en plus à l'écoute de son propre corps, ou plutôt de la saine liaison entre son corps et son âme. A mesure que la mort approche, Ronsard veille à se débarrasser de toutes les formes d'illusion qui pourraient venir perturber une si belle association."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782267013160"/>
+            <column name="title" type="varchar(255)" value="Le seigneur des anneaux"/>
+            <column name="authors" type="varchar(255)" value="J. R. R. Tolkien"/>
+            <column name="publisher" type="varchar(255)" value="Christian Bourgois Editeur"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=oc2KMwEACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Aux temps reculés de ce récit, la Terre est peuplée d’innombrables créatures : les Hobbits, apparentés à l’Homme, les Elfes et les Nains vivent en paix dans la Comté. Une paix menacée depuis que l’Anneau de Puissance, forgé par Sauron de Mordor, a été dérobé. Or cet anneau est doté d’un pouvoir maléfique qui confère à son détenteur une autorité sans limite et fait de lui le Maître du monde. Sauron s’est donc juré de le reconquérir…"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782267028928"/>
+            <column name="title" type="varchar(255)" value="Le Seigneur des anneaux - Les Deux Tours"/>
+            <column name="authors" type="varchar(255)" value="J. R. R. Tolkien"/>
+            <column name="publisher" type="varchar(255)" value="Christian Bourgois Editeur"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=eZ2VDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Les Deux Tours, deuxième partie du Seigneur des Anneaux, poursuit le récit des aventures de Frodo et de ses compagnons, lancés dans leur périple en Terre du Milieu. Avec Merry et Pippin, le lecteur plonge dans les batailles entre les Orques et les Cavaliers du Rohan, avant de rencontrer l’Ent Fangorn ; avec Aragorn, Gimli et Legolas, il assiste incrédule au retour de Gandalf ; avec Frodo et Sam, il suit Gollum le long des chemins périlleux qui mènent vers le royaume du Mordor, le seul lieu où l’Anneau pourrait être détruit. Cette nouvelle traduction prend en compte la dernière version du texte anglais, les indications laissées par J.R.R. Tolkien à l’intention des traducteurs et les découvertes permises par les publications posthumes proposées par Christopher Tolkien. Ce volume contient 16 illustrations d’Alan Lee, entièrement renumérisées, d’une qualité inégalée, ainsi qu’une carte en couleur de la Terre du Milieu."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782267032192"/>
+            <column name="title" type="varchar(255)" value="Le Seigneur des anneaux - Le Retour du Roi"/>
+            <column name="authors" type="varchar(255)" value="J. R. R. Tolkien"/>
+            <column name="publisher" type="varchar(255)" value="Christian Bourgois Editeur"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=tdkqDQAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="La dernière partie du Seigneur des Anneaux voit la fin de la quête de Frodo en Terre du Milieu. Le Retour du Roi raconte la stratégie désespérée de Gandalf face au Seigneur des Anneaux, jusqu’à la catastrophe finale et au dénouement de la grande Guerre où s’illustrent Aragorn et ses compagnons, Gimli le Nain, Legolas l’Elfe, les Hobbits Merry et Pippin, tandis que Gollum est appelé à jouer un rôle inattendu aux côtés de Frodo et de Sam au Mordor, le seul lieu où l’Anneau de Sauron peut être détruit. Cette nouvelle traduction prend en compte la dernière version du texte anglais, les indications laissées par J. R. R. Tolkien à l’intention des traducteurs et les découvertes permises par les publications posthumes proposées par Christopher Tolkien. Ce volume contient 15 illustrations d’Alan Lee, entièrement renumérisées, d’une qualité inégalée, ainsi que des cartes (en couleur) de la Terre du Milieu."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782075009874"/>
+            <column name="title" type="varchar(255)" value="Le Livre des Étoiles - Le Visage de l'Ombre"/>
+            <column name="authors" type="varchar(255)" value="Erik L'Homme"/>
+            <column name="publisher" type="varchar(255)" value="Gallimard Jeunesse"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=rj6bbG4zuj8C&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="La nouvelle a retenti comme un coup de tonnerre au Pays d'Ys : Guillemot a été enlevé par l'Ombre, l'adversaire le plus redoutable qu'il ait jamais eu à affronter ! En le retenant prisonnier, l'Ombre veut accéder aux ultimes sortilèges du «Livre des Étoiles». Malgré ses pouvoirs exceptionnels, Guillemot résistera-t-il à cette puissance maléfique qui s'apprête à dominer les Trois Mondes ? Une lutte sans merci s'engage..."/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782075009850"/>
+            <column name="title" type="varchar(255)" value="Le Livre des Étoiles - Le Seigneur Sha"/>
+            <column name="authors" type="varchar(255)" value="Erik L'Homme"/>
+            <column name="publisher" type="varchar(255)" value="Gallimard Jeunesse"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=oPOOV7vs5vcC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Le destin de Guillemot se poursuit dans l'univers magique et fantastique de ce deuxième volume de la trilogie 'Le Livre des Étoiles'. Prix des collégiens du Var 2002. Prix Ruralivres en Atrébatie (4e-3e)"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782075009713"/>
+            <column name="title" type="varchar(255)" value="Le Livre des Étoiles - Qadehar le Sorcier"/>
+            <column name="authors" type="varchar(255)" value="Erik L'Homme"/>
+            <column name="publisher" type="varchar(255)" value="Gallimard Jeunesse"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=gDUcb1XgkbsC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Rares sont ceux qui connaissent l'existence du Pays d'Ys, situé ŕ mi-chemin entre le monde réel et les territoires du Monde Incertain, peuplés de monstres et d'étranges tribus. Ys semble un pays en tous points pareil au nôtre, ŕ la différence qu'on y côtoie, entre ordinateurs et salles de cinéma, chevaliers en armure et sorciers aux pouvoirs étonnants. Guillemot de Troďl est un garçon d'Ys, enfant timide et ręveur. D'oů lui viennent ses dons exceptionnels pour la sorcellerie que lui enseigne patiemment Maître Qadehar? Qu'est devenu Le Livre des Étoiles, dérobé voilŕ longtemps et qui renferme le secret de sortilčges puissants? Pourquoi Agathe de Balengru, sa pire ennemie, a-t-elle été enlevée? Dans sa quęte de la vérité, Guillemot entraîne avec lui ses amis de toujours, Romaric, Gontrand, Coralie et l'intrépide Ambre. Ensemble, ils franchissent la Porte qui conduit dans le Monde Incertain"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782747059527"/>
+            <column name="title" type="varchar(255)" value="Eragon, L'Héritage"/>
+            <column name="authors" type="varchar(255)" value="Christopher Paolini, Marie-Hélène Delval"/>
+            <column name="publisher" type="varchar(255)" value="Bayard Jeunesse"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=ZQucDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Des villes assiégées, Une île par-delà les tempêtes, D'anciennes prédictions, Un destin s'accomplit... Il y a peu encore, Eragon n'était qu'un simple garçon de ferme, et Saphira, son dragon, une étrange pierre bleue ramassée dans la forêt... Depuis, le sort de plusieurs peuples repose sur leurs épaules. De longs mois d'entraînement et de combats, s'ils ont permis des victoires et ranimé l'espoir, ont aussi provoqué des pertes cruelles. Or, l'ultime bataille contre Galbatorix reste à mener. Certes, Eragon et Saphira ne sont pas seuls, ils ont des alliés : les Vardens conduits par Nasuada, Arya et les elfes, le roi Orik et ses nains, Garzhvog et ses redoutables Urgals. Le peuple des chats-garous s'est même joint à eux avec son roi, Grimrr Demi-Patte. Pourtant, si le jeune Dragonnier et sa puissante compagne aux écailles bleues ne trouvent pas en eux-mêmes la force d'abattre le tyran, personne n'y réussira. Ils n'auront pas de seconde chance. Tel est leur destin. Il leur faut renverser le roi maléfique, restaurer la paix et la justice en Alagaësia. Quel que soit le prix à payer. Après Eragon, L'Aîné et Brisingr, le livre IV du cycle de l'Héritage entraîne ses lecteurs vers un achèvement digne de l'éclat, du souffle et de la puissance des dragons !"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="book">
+            <column name="isbn" type="varchar(255)" value="9782747014403"/>
+            <column name="title" type="varchar(255)" value="Eragon"/>
+            <column name="authors" type="varchar(255)" value="Christopher Paolini"/>
+            <column name="publisher" type="varchar(255)" value="Bayard Jeunesse"/>
+            <column name="image" type="varchar(255)"
+                    value="https://books.google.com/books/content?id=Yp2oDAAAQBAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api"/>
+            <column name="description" type="text"
+                    value="Voilà bien longtemps que le mal règne dans l'Empire de l'Alagaësia... Et puis, un jour, le jeune Eragon découvre au cœur de la forêt une magnifique pierre bleue, étrangement lisse. Fasciné et effrayé, il l'emporte à Carvahall, le village où il vit très simplement avec son oncle et son cousin. Il n'imagine pas alors qu'il s'agit d'un veuf, et qu'un dragon, porteur d'un héritage ancestral, aussi vieux que l'Empire lui-même, va en éclore... Très vite, la vie d'Eragon est bouleversée. Contraint de quitter les siens, il s'engage dans une quête qui le mènera aux confins de l'Alagaësia. Armé de son épée et guidé par les conseils de Brom, le vieux conteur, Eragon va devoir affronter, avec son jeune dragon, les terribles ennemis envoyés par le roi dont la malveillance démoniaque ne connaît aucune limite. Eragon n'a que quinze ans, mais le destin de l'Empire est désormais entre ses mains ! Un livre hors du commun, digne de J.R.R. Tolkien, écrit par un très jeune écrivain qui, avec le premier roman de cette trilogie  l'Héritage , est d'ores et déjà entré au panthéon des grands auteurs de la littérature de Fantasy !"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

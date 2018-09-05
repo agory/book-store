@@ -4,6 +4,13 @@ import com.example.bookstore.entities.Book;
 
 public class BookDetail {
 
+    String isbn;
+    String title;
+    String authors;
+    String publisher;
+    String image;
+    String description;
+
     public BookDetail(Book book) {
         this.isbn = book.getIsbn();
         this.title = book.getTitle();
@@ -13,15 +20,4 @@ public class BookDetail {
         this.description = book.getDescription();
     }
 
-    String isbn;
-
-    String title;
-
-    String authors;
-
-    String publisher;
-
-    String image;
-
-    String description;
 }

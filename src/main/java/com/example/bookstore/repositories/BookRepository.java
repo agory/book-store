@@ -9,5 +9,5 @@ public interface BookRepository extends Repository<Book, String> {
 
     List<Book> findAll();
 
-    Book findOne(String isbn);
+    Book findByIsbn(String isbn);
 }

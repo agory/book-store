@@ -2,7 +2,9 @@ package com.example.bookstore.dto;
 
 import com.example.bookstore.entities.Book;
 
-public class BookShortVO {
+import java.io.Serializable;
+
+public class BookShortVO implements Serializable {
 
     final String title;
     final String image;

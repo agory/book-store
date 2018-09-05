@@ -12,13 +12,8 @@ import static java.util.stream.Collectors.toList;
 @Component
 public class BookFacade {
 
-
-    BookRepository bookRepository;
-
     @Autowired
-    public BookFacade(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    private BookRepository bookRepository;
 
     public List<BookShortVO> retrieveBookList() {
         List<Book> books = this.bookRepository.findAll();
@@ -26,7 +21,7 @@ public class BookFacade {
     }
 
     public BookDetailVO retrieveBookDetail(String isbn) {
-        Book book = this.bookRepository.findOne(isbn);
+        Book book = this.bookRepository.findByIsbn(isbn);
         return new BookDetailVO(book);
     }
 }

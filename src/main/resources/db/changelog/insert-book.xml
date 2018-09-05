@@ -2,8 +2,8 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"
+        logicalFilePath="insert-book.xml">
 
     <changeSet author="liquibase-docs" id="insert-example">
         <insert schemaName="public"
@@ -148,6 +148,5 @@
                     value="Voilà bien longtemps que le mal règne dans l'Empire de l'Alagaësia... Et puis, un jour, le jeune Eragon découvre au cœur de la forêt une magnifique pierre bleue, étrangement lisse. Fasciné et effrayé, il l'emporte à Carvahall, le village où il vit très simplement avec son oncle et son cousin. Il n'imagine pas alors qu'il s'agit d'un veuf, et qu'un dragon, porteur d'un héritage ancestral, aussi vieux que l'Empire lui-même, va en éclore... Très vite, la vie d'Eragon est bouleversée. Contraint de quitter les siens, il s'engage dans une quête qui le mènera aux confins de l'Alagaësia. Armé de son épée et guidé par les conseils de Brom, le vieux conteur, Eragon va devoir affronter, avec son jeune dragon, les terribles ennemis envoyés par le roi dont la malveillance démoniaque ne connaît aucune limite. Eragon n'a que quinze ans, mais le destin de l'Empire est désormais entre ses mains ! Un livre hors du commun, digne de J.R.R. Tolkien, écrit par un très jeune écrivain qui, avec le premier roman de cette trilogie  l'Héritage , est d'ores et déjà entré au panthéon des grands auteurs de la littérature de Fantasy !"/>
         </insert>
     </changeSet>
-
 
 </databaseChangeLog>

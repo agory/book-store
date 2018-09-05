@@ -2,19 +2,19 @@ package com.example.bookstore.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Book {
 
     @Id
-    @NotEmpty
+    @NotNull
     private String isbn;
 
-    @NotEmpty
+    @NotNull
     private String title;
 
-    @NotEmpty
+    @NotNull
     private String authors;
 
     private String publisher;

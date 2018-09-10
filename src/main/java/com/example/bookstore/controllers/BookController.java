@@ -2,12 +2,12 @@ package com.example.bookstore.controllers;
 
 import com.example.bookstore.dto.BookDetailVO;
 import com.example.bookstore.dto.BookShortVO;
+import com.example.bookstore.dto.BookUpdateVO;
 import com.example.bookstore.facades.BookFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -17,16 +17,26 @@ public class BookController {
     @Autowired
     private BookFacade bookFacade;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public List<BookShortVO> retrieveAllBook(){
         return bookFacade.retrieveBookList();
     }
 
-    @RequestMapping("/{isbn}")
+    @GetMapping("/{isbn}")
     public BookDetailVO retrieveBookByIsbn(
             @PathVariable(value="isbn")
             @NotNull String isbn
     ){
         return bookFacade.retrieveBookDetail(isbn);
+    }
+
+    @PutMapping("/{isbn}")
+    public BookDetailVO updateImageAndDescription(
+            @PathVariable(value="isbn")
+            @NotNull String isbn,
+            @RequestBody
+            @Valid BookUpdateVO book
+    ) {
+        return bookFacade.updateImageAndDescription(isbn,book);
     }
 }

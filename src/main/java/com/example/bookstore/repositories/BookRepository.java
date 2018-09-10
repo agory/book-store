@@ -10,4 +10,6 @@ public interface BookRepository extends Repository<Book, String> {
     List<Book> findAll();
 
     Book findByIsbn(String isbn);
+
+    Book save(Book entity);
 }

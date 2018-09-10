@@ -6,10 +6,12 @@ import java.io.Serializable;
 
 public class BookShortVO implements Serializable {
 
-    final String title;
-    final String image;
+    private final String isbn;
+    private final String title;
+    private final String image;
 
     public BookShortVO(Book book) {
+        this.isbn = book.getIsbn();
         this.title = book.getTitle();
         this.image = book.getImage();
     }
@@ -20,5 +22,9 @@ public class BookShortVO implements Serializable {
 
     public String getImage() {
         return image;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 }

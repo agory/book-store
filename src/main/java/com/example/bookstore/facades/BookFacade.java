@@ -8,7 +8,9 @@ import com.example.bookstore.repositories.BookRepository;
 import com.example.bookstore.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.List;
+
 import static java.util.stream.Collectors.toList;
 
 @Component
@@ -34,5 +36,11 @@ public class BookFacade {
         book.updateImageAndDescription(bookUpdateVO);
         Book bookUpdated = this.bookRepository.save(book);
         return new BookDetailVO(bookUpdated);
+    }
+
+    public void deleteBook(String isbn) {
+        Book book = this.bookRepository.findByIsbn(isbn);
+        if (book == null) throw new NotFoundException();
+        this.bookRepository.delete(book);
     }
 }

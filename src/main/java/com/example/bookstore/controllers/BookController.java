@@ -31,7 +31,7 @@ public class BookController {
     }
 
     @PutMapping("/{isbn}")
-    public BookDetailVO updateImageAndDescription(
+    public BookDetailVO updateBook(
             @PathVariable(value="isbn")
             @NotNull String isbn,
             @RequestBody
@@ -39,4 +39,13 @@ public class BookController {
     ) {
         return bookFacade.updateImageAndDescription(isbn,book);
     }
+
+    @DeleteMapping("/{isbn}")
+    public void deleteBook(
+            @PathVariable(value="isbn")
+            @NotNull String isbn
+    ){
+        bookFacade.deleteBook(isbn);
+    }
+
 }

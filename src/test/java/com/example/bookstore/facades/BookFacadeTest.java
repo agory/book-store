@@ -12,10 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
@@ -43,10 +41,9 @@ public class BookFacadeTest {
         // then
         assertThat(booksRetrieved)
                 .hasSize(books.size())
-                .extracting( book -> tuple(book.getTitle(), book.getImage()))
+                .extracting(book -> tuple(book.getTitle(), book.getImage()))
                 .contains(tuple("title", "Image"));
         Mockito.verify(bookRepository, Mockito.times(1)).findAll();
-
     }
 
     @Test
@@ -75,8 +72,8 @@ public class BookFacadeTest {
                 // Then
                 .hasMessage(ExceptionMessages.NotFound.toString());
         Mockito.verify(bookRepository, Mockito.times(1)).findByIsbn(isbn);
-
     }
+
 
     @Test
     public void updateBook_shouldUpdateDescriptionAndImage_whenAIsbnAndABookIsGiven() {
@@ -97,13 +94,12 @@ public class BookFacadeTest {
         assertThat(result.getDescription()).isEqualTo(book.getDescription());
         Mockito.verify(bookRepository, Mockito.times(1)).findByIsbn(isbn);
         Mockito.verify(bookRepository, Mockito.times(1)).save(book);
-
-
     }
 
     @Test
     public void updateBook_shouldThrowError_whenAUnknownIsbnAndABookIsGiven() {
         // given
+
         BookUpdateVO update = new BookUpdateVO("New Images", "New Description");
         String isbn = "C123456789012";
         Mockito.when(bookRepository.findByIsbn(isbn)).thenReturn(null);
@@ -115,5 +111,35 @@ public class BookFacadeTest {
                 .hasMessage(ExceptionMessages.NotFound.toString());
         Mockito.verify(bookRepository, Mockito.times(1)).findByIsbn(isbn);
 
+    }
+
+    @Test
+    public void deleteBook_shouldRunWithoutError_whenIsbnIsGiven() {
+        // Given
+        String isbn = "C123456789012";
+        Book book = new Book("C123456789012", "title", "authors", "publisher", "Images", "Book description");
+        Mockito.when(bookRepository.findByIsbn(isbn)).thenReturn(book);
+        Mockito.doNothing().when(bookRepository).delete(book);
+
+        // When
+        bookFacade.deleteBook(isbn);
+
+        // then
+        Mockito.verify(bookRepository, Mockito.times(1)).findByIsbn(isbn);
+        Mockito.verify(bookRepository, Mockito.times(1)).delete(book);
+    }
+
+    @Test
+    public void deleteBook_shouldThrowError_whenUnknownIsbnIsGiven() {
+        // Given
+        String isbn = "C123456789012";
+        Mockito.when(bookRepository.findByIsbn(isbn)).thenReturn(null);
+
+        // When
+        assertThatThrownBy(() -> this.bookFacade.deleteBook(isbn))
+
+                // Then
+                .hasMessage(ExceptionMessages.NotFound.toString());
+        Mockito.verify(bookRepository, Mockito.times(1)).findByIsbn(isbn);
     }
 }

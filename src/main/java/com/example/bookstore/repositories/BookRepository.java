@@ -12,4 +12,6 @@ public interface BookRepository extends Repository<Book, String> {
     Book findByIsbn(String isbn);
 
     Book save(Book entity);
+
+    void delete(Book book);
 }

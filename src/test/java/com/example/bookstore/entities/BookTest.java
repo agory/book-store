@@ -8,11 +8,11 @@ import static org.assertj.core.api.Assertions.*;
 public class BookTest {
 
     @Test
-    public void updateImageAndDescription() {
+    public void updateImageAndDescription_shouldUpdateImageAndDescription_givenAnImageAndADescription() {
         // Given
+        final String image = "New Image Url";
+        final String description = "New Description";
         Book book = new Book("C123456789012", "title", "authors", "publisher", "Image", "Book description");
-        String image = "New Image Url";
-        String description = "New Description";
         BookUpdateVO bookUpdateVO = new BookUpdateVO(image,description);
 
         // When

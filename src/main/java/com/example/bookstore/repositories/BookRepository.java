@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BookRepository extends Repository<Book, String> {
 
-    List<Book> findAll();
+    List<Book> findAllByOrderByPublishDateDesc();
 
     Book findByIsbn(String isbn);
 

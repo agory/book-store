@@ -20,7 +20,7 @@ public class BookFacade {
     private BookRepository bookRepository;
 
     public List<BookShortVO> retrieveBookList() {
-        List<Book> books = this.bookRepository.findAll();
+        List<Book> books = this.bookRepository.findAllByOrderByPublishDateDesc();
         return books.stream().map(BookShortVO::new).collect(toList());
     }
 

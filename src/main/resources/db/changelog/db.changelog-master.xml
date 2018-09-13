@@ -12,5 +12,5 @@
     <include file="insert-book.xml" relativeToChangelogFile="true"/>
     <include file="add-book-constraints.xml" relativeToChangelogFile="true"/>
     <include file="create-table-user.xml" relativeToChangelogFile="true"/>
-
+    <include file="add-publish-date-book.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>

@@ -35,7 +35,7 @@ public class BookFacadeTest {
         books.add(new Book("A123456789012", "title", "authors", "publisher", "Image", "Book description"));
         books.add(new Book("B123456789012", "title", "authors", "publisher", "Image", "Book description"));
         books.add(new Book("C123456789012", "title", "authors", "publisher", "Image", "Book description"));
-        Mockito.when(bookRepository.findAll()).thenReturn(books);
+        Mockito.when(bookRepository.findAllByOrderByPublishDateDesc()).thenReturn(books);
 
         // when
         List<BookShortVO> booksRetrieved = this.bookFacade.retrieveBookList();
@@ -45,7 +45,7 @@ public class BookFacadeTest {
                 .hasSize(books.size())
                 .extracting(book -> tuple(book.getTitle(), book.getImage()))
                 .contains(tuple("title", "Image"));
-        Mockito.verify(bookRepository, Mockito.times(1)).findAll();
+        Mockito.verify(bookRepository, Mockito.times(1)).findAllByOrderByPublishDateDesc();
     }
 
     @Test

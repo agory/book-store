@@ -5,6 +5,7 @@ import com.example.bookstore.dto.BookUpdateVO;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Book {
@@ -25,11 +26,17 @@ public class Book {
 
     private String description;
 
+    private Date publishDate;
+
     public Book() {
         super();
     }
 
     public Book(String isbn, String title, String authors, String publisher, String image, String description) {
+        this(isbn,title,authors,publisher,image,description,null);
+    }
+
+    public Book(@NotNull String isbn, @NotNull String title, @NotNull String authors, String publisher, String image, String description, Date publish_date) {
         this();
         this.isbn = isbn;
         this.title = title;
@@ -37,6 +44,7 @@ public class Book {
         this.publisher = publisher;
         this.image = image;
         this.description = description;
+        this.publishDate = publish_date;
     }
 
     public void updateImageAndDescription(BookUpdateVO book) {
@@ -66,5 +74,9 @@ public class Book {
 
     public String getDescription() {
         return description;
+    }
+
+    public Date getPublishDate() {
+        return publishDate;
     }
 }

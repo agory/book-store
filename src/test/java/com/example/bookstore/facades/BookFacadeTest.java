@@ -12,8 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
@@ -51,7 +53,7 @@ public class BookFacadeTest {
         // given
         String isbn = "C123456789012";
         Book book = new Book("C123456789012", "title", "authors", "publisher", "Images", "Book description");
-        Mockito.when(bookRepository.findByIsbn(isbn)).thenReturn(book);
+        Mockito.when(this.bookRepository.findByIsbn(isbn)).thenReturn(book);
 
         // when
         BookDetailVO result = this.bookFacade.retrieveBookDetail(isbn);

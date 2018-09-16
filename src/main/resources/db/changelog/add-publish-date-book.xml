@@ -1,0 +1,68 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                            http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+        logicalFilePath="add-publish-date-book.xml">
+
+    <changeSet author="agory" id="add-publish-date-book">
+        <addColumn tableName="book">
+            <column name="publish_date" type="DATE"/>
+        </addColumn>
+        <update tableName="book">
+            <column name="publish_date" value="2001-09-27"/>
+            <where>isbn = '9780244909130'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2001-09-28"/>
+            <where>isbn = '9782844859129'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2001-09-29"/>
+            <where>isbn = '9782858166480'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2010-01-01"/>
+            <where>isbn = '9781463400866'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2010-01-02"/>
+            <where>isbn = '9782600012560'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2010-01-03"/>
+            <where>isbn = '9782267013160'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2010-01-10"/>
+            <where>isbn = '9782267028928'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2016-08-01"/>
+            <where>isbn = '9782267032192'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2016-08-23"/>
+            <where>isbn = '9782075009874'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2016-09-11"/>
+            <where>isbn = '9782075009850'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2017-11-01"/>
+            <where>isbn = '9782075009713'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2018-03-02"/>
+            <where>isbn = '9782747059527'</where>
+        </update>
+        <update tableName="book">
+            <column name="publish_date" value="2018-05-23"/>
+            <where>isbn = '9782747014403'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

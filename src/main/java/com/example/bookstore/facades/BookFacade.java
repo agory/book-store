@@ -3,9 +3,10 @@ package com.example.bookstore.facades;
 import com.example.bookstore.dto.BookDetailVO;
 import com.example.bookstore.dto.BookShortVO;
 import com.example.bookstore.dto.BookUpdateVO;
+import com.example.bookstore.dto.QueryBookVO;
+import com.example.bookstore.entities.Book;
 import com.example.bookstore.exceptions.NotFoundException;
 import com.example.bookstore.repositories.BookRepository;
-import com.example.bookstore.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,8 +20,21 @@ public class BookFacade {
     @Autowired
     private BookRepository bookRepository;
 
-    public List<BookShortVO> retrieveBookList() {
-        List<Book> books = this.bookRepository.findAllByOrderByPublishDateDesc();
+    /***
+     * Retrieve all books or retrieve all book that match title et author in queryBookVO
+     * @param queryBookVO
+     * @return books
+     */
+    public List<BookShortVO> retrieveBookList(QueryBookVO queryBookVO) {
+        List<Book> books;
+
+        if (queryBookVO.checkEmpty()) books = this.bookRepository.findAllByOrderByPublishDateDesc();
+        else books = this.bookRepository
+            .findByTitleAndAuthor(
+                queryBookVO.getTitle(),
+                queryBookVO.getAuthor()
+            );
+
         return books.stream().map(BookShortVO::new).collect(toList());
     }
 

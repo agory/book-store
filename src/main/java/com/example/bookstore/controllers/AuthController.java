@@ -1,6 +1,5 @@
 package com.example.bookstore.controllers;
 
-
 import com.example.bookstore.dto.RegisterVO;
 import com.example.bookstore.facades.UserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public void register(
-            @RequestBody
-            @Valid RegisterVO registerVO
+        @RequestBody
+        @Valid RegisterVO registerVO
     ) {
         this.userFacade.register(registerVO);
     }

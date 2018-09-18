@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
@@ -22,12 +21,10 @@ public class UserFacadeTest {
 
     @Mock
     UserRepository userRepository;
-
-    @Mock
-    private PasswordEncoder passwordEncoder;
-
     @InjectMocks
     UserFacade userFacade;
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
     @Test
     public void loadUserByUsername_shouldReturnAnUser_whenAUsernameIsGiven() {
@@ -40,7 +37,7 @@ public class UserFacadeTest {
         UserDetails userFound = userFacade.loadUserByUsername(username);
 
         // Then
-        Mockito.verify(userRepository, Mockito.times(1)).findByUsername(username);
+        Mockito.verify(userRepository).findByUsername(username);
         assertThat(userFound).isEqualTo(user);
     }
 
@@ -53,7 +50,7 @@ public class UserFacadeTest {
         // When
         assertThatThrownBy(() -> userFacade.loadUserByUsername(username))
 
-        // Then
+            // Then
             .hasMessage(username)
             .isInstanceOf(UsernameNotFoundException.class);
 
@@ -66,7 +63,7 @@ public class UserFacadeTest {
         final String username = "user";
         final String password = "password";
         final String code = "code";
-        final RegisterVO registerVO = new RegisterVO(username,password);
+        final RegisterVO registerVO = new RegisterVO(username, password);
         Mockito.when(this.passwordEncoder.encode(password)).thenReturn(code);
         Mockito.when(this.userRepository.save(any(User.class))).thenReturn(null);
 

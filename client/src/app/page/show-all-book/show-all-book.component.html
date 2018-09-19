@@ -1,0 +1,6 @@
+<section>
+  <h1>Show All book</h1>
+
+  <app-book-list *ngIf="books" [books]="books" (onSelected)="onSelected($event)"></app-book-list>
+</section>
+
